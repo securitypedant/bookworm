@@ -1,0 +1,36 @@
+{
+  "name": "bookworm",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "vite dev",
+    "build": "vite build",
+    "deploy": "vite build && wrangler deploy",
+    "types": "wrangler types worker-configuration.d.ts --include-runtime false"
+  },
+  "dependencies": {
+    "@cloudflare/ai-chat": "^0.4.2",
+    "@cloudflare/codemode": "^0.3.4",
+    "@cloudflare/shell": "^0.3.2",
+    "@cloudflare/think": "^0.2.1",
+    "agents": "^0.10.2",
+    "ai": "^6.0.159",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "workers-ai-provider": "^3.1.10",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.32.2",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.8",
+    "wrangler": "^4.82.2"
+  }
+}

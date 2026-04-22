@@ -1,0 +1,45 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "bookworm",
+  "account_id": "51e28e9a83197a9f12a2e39f9477ba4e",
+  "main": "src/server.ts",
+  "compatibility_date": "2026-04-12",
+  "compatibility_flags": ["nodejs_compat", "experimental"],
+  "ai": {
+    "binding": "AI",
+    "remote": true
+  },
+  "worker_loaders": [
+    {
+      "binding": "LOADER"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "WORKSPACE_R2",
+      "bucket_name": "bookworm-workspace","preview_bucket_name": "bookworm-workspace"
+    }
+  ],
+  "assets": {
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/agents/*"]
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "BookWormAgent",
+        "class_name": "BookWormAgent"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["BookWormAgent"]
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}

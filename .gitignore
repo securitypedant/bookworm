@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.wrangler/
+
+worker-configuration.d.ts
+.DS_Store
+
+.dev.vars
+.env
+.env.*
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
